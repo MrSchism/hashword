@@ -1,28 +1,46 @@
 #! /usr/bin/perl
 
-## hashword script written by Joshua "MrSchism" Embrey and Joseph "Arcarna" Preston
-## WTFPL 2013
+######################################################################################
+# hashword written by: 									
+# 	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
+#	Joseph "Arcarna" Preston [jpreston86@gmail.com]					
+# Intial commit: October 9, 2013 							
+# Current version: October 13, 2013							
+######################################################################################
 
-# Declare usable digests
-use Digest::SHA qw(sha256_hex);
+# Declare hashing digests
 use Digest::SHA qw(sha512_hex);
+use Digest::SHA qw(sha256_hex);
 
-# Request hashword length
-print "Would you like short or long?\n";
-$input = <>;
+# Declare 'my' variables as needed
+my $in;
 
-print "Seed?  "; # Request seed password
-system ("stty -echo"); # Drop echo'd characters
-$seed = <>; # Grab $seed
-system ("stty echo"); # Re-enable echo
+# Prompt for initial password seed
+print "\n";
+print "Seed? ";
+system ("stty -echo"); # Remove stty echo for password privacy
+$seed = <>;
+system ("stty echo"); # Return stty echo for easier yes/no
+print "\n";
 
-if($input == "short") {
-	 print sha256_hex($seed), "\n"; # Print the short hashword
-					}
- elsif ($input == "long") {
-	 print sha512_hex($seed), "\n"; # Print the long hashword
-					}
- else {
- 	die ("Please answer with long or short\n"); # Fail catastrophically
- 	}
+$long = sha512_hex($seed); # Declare that long uses sha512 on the seed
+$short = sha256_hex($seed); # Declare that short uses sha256 on the seed
 
+# Until loop requesting yes/no for use of long (sha512) mode
+until (defined $in) {
+	print "Use Long mode? (yes/no): ";
+	$_ = <>;
+	$in = 1 if /^Y/i;
+	$in = 0 if /^N/i;
+	print "\n";
+	}
+if ($in == 1) {
+	print "Your hashword is:\n";
+	print $long, "\n";
+	print "\n";
+	}
+else {
+	print "Your hashword is:\n";
+	print $short, "\n";
+	print "\n";
+	}
