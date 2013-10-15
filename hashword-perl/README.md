@@ -1,5 +1,5 @@
-Perl scripts
-============
+hashword Perl scripts
+=====================
 
 This is the location of the hashword perl scripts.
 
