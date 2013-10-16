@@ -5,7 +5,7 @@
 # 	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 #	Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 # Intial commit: October 9, 2013 							
-# Current version: October 13, 2013							
+# Current version: October 16, 2013							
 ######################################################################################
 
 # Declare hashing digests
