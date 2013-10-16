@@ -36,11 +36,11 @@ until (defined $in) {
 	}
 if ($in == 1) {
 	print "Your hashword is:\n";
-	print $long, "\n";
+	print "\#", $long, "\n";
 	print "\n";
 	}
 else {
 	print "Your hashword is:\n";
-	print $short, "\n";
+	print "\#", $short, "\n";
 	print "\n";
 	}
