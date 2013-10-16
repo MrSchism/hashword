@@ -20,6 +20,7 @@ print "\n";
 print "Seed? ";
 system ("stty -echo"); # Remove stty echo for password privacy
 $seed = <>;
+chomp $seed;
 system ("stty echo"); # Return stty echo for easier yes/no
 print "\n";
 
