@@ -16,6 +16,7 @@ use Digest::SHA qw(sha256_hex);
 print "\n";
 print "Seed? ";
 $seed = <>;
+chomp $seed;
 
 # Visual formatting
 print "\n"; 
