@@ -1,9 +1,12 @@
 #! /usr/bin/perl
 
-# hashword-checker written by: 
-# 	Joshua "MrSchism" Embrey
-#	Joseph "Arcarna" Preston
-# October 14, 2013
+######################################################################################
+# hashword written by:                                                                         
+#         Joshua "MrSchism" Embrey [mrschism@sdf.org]                                        
+#         Joseph "Arcarna" Preston [jpreston86@gmail.com]                                        
+# Intial commit: October 9, 2013                                                         
+# Current version: October 13, 2013                                                        
+######################################################################################
 
 # Declare used hashing digests
 use Digest::SHA qw(sha512_hex);
