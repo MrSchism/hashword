@@ -11,5 +11,4 @@ Improvements
 Intended improvements are as follows:
 
 1. Add optional out to clipboard for easy copy-paste
-2. Create a version in python, java, and PHP
-3. GUI.  It's going to happen.
+2. Append an octothorp to the beginning of the hash, thus adding a special character to the passwords
