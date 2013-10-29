@@ -5,23 +5,27 @@
 # 	Joshua "MrSchism" Embrey [mrschism@sdf.org]
 # 	Joseph "Arcarna" Preston [jpreston86@gmail.com]
 # Intial commit: October 16, 2013
-# Current version: October 19, 2013
+# Current version: October 29, 2013
 #####################################################################################
 
 ## Declare required components
 require 'digest'
 
 ## Seed input
+system ("clear") # Starts fresh
 puts "\n" # Formatting away from initial line
-puts "Seed?" # Requests starting seed
+puts "Hashword generator v 1.2 (build 20131029)" # Name and build version info (version info in yyyymmdd format)
+puts "\n" # Formatting
+puts "Please enter your hashword seed." # Informs user to input hashword seed
+puts "*NOTE: hashword seeds are case sensitive.*" # Case-sensitivity notice
+puts "\n" # Formatting
 system ("stty -echo") # Mitigates shoulder-surfing
-seed = gets.chomp # Input prompt for starting seed
+seed = [(print 'Seed: '), gets.chomp][1] # Input prompt for starting seed using single-line array
 system ("stty echo") # Re-enables text echo
 
 ## Long mode boolean input
 puts "\n" # Formatting
-puts "Use long mode?" # Queries for use of long mode
-input = gets.chomp # A chomped gets for input regarding long mode
+input = [(print 'Use Long mode? (yes/no): '), gets.chomp][1] # A chomped gets for input regarding long mode using single-line array
 input = input.downcase # Reduces input to downcase
 
 ## 'If' statement for presenting long or short hashword
