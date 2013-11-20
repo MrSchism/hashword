@@ -1,7 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Hash Your Password</title>
 </head>
 
@@ -18,11 +16,13 @@
 
 <?php
 $seed = (isset($_POST['password']) ? $_POST['password'] : null); //Takes the user input and applies it to the variable "seed".
-
 $hashtype = (isset($_POST['hashtype']) ? $_POST['hashtype'] : null); //Sets the hashtype based on the radio button input.
 ?>
+<h1>HASH YOUR PASSWORD</h1>
+<p>The benefit of hashing your password is improved complexity and resistance to brute-force dictionary attacks.</p>
 Please enter your hashword seed.<br />
 *NOTE: hashword seeds are case sensitive.*
+<hr />
 <form action="?" method="POST">
 Seed:<input type="password" name="password"><br />
 <input type="radio" value="short" name="hashtype" />Short<br />
@@ -32,6 +32,13 @@ Seed:<input type="password" name="password"><br />
 <br />
 <br />
 <?php
+function scrub($seed) {
+	$seed = trim($seed);
+	$seed = stripslashes($seed);
+	$seed = htmlspecialchars($seed);
+  	return $seed;
+		}
+
 switch ($hashtype) {
 		case "short":
 			echo "#" , openssl_digest($seed, 'sha256'); //Outputs seed in SHA256 hash.
@@ -43,6 +50,5 @@ switch ($hashtype) {
 			echo 'Please select Short or Long'; //Outputs when no radio button is selected.
 		}
 ?>
-
 </body>
 </html>
