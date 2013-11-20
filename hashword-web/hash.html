@@ -2,14 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Hash Your Password</title>
 </head>
 
 <body>
-<form action="hash.php" method="post">
+
+<form action="hash.php" method="POST">
 Seed:<input type="password" name="password"><br />
-<input type="submit" value="Generate Short Hash" />
-<input type="submit" value="Generate Long Hash" />
+<input type="radio" value="short" name="hashtype" />Short<br />
+<input type="radio" value="long" name="hashtype" />Long<br />
+<input type="submit" value="Generate Hash" />
 </form>
 
 </body>
