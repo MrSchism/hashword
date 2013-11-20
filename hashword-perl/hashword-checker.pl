@@ -5,17 +5,19 @@
 #         Joshua "MrSchism" Embrey [mrschism@sdf.org]                                        
 #         Joseph "Arcarna" Preston [jpreston86@gmail.com]                                        
 # Intial commit: October 9, 2013                                                         
-# Current version: October 16, 2013                                                        
+# Current version: November 20, 2013                                                        
 ######################################################################################
 
 # Declare used hashing digests
 use Digest::SHA qw(sha512_hex);
 use Digest::SHA qw(sha256_hex);
+use HTML::Entities;
 
 # Request seed
 print "\n";
 print "Seed? ";
 $seed = <>;
+$seed = HTML::Entities::encode($seed);
 chomp $seed;
 
 # Visual formatting
