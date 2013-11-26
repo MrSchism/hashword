@@ -2,8 +2,8 @@
 
 ######################################################################################
 # hashword written by: 									
-# 	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
-#	Joseph "Arcarna" Preston [jpreston86@gmail.com]					
+#   Joshua "MrSchism" Embrey [mrschism@sdf.org]					
+#   Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 # Intial commit: November 6, 2013 							
 # Current version: November 6, 2013							
 ######################################################################################
