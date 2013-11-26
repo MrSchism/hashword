@@ -36,11 +36,37 @@ print "Please enter your hashword seed.\n";
 print "*NOTE: hashword seeds are case sensitive.* \n";
 print "\n";
 print "Seed: "; # Prompt for initial password seed
-system ("stty -echo"); # Remove stty echo for password privacy
+
+# Strip terminal echo
+if ($^O eq "MSWin32")
+	{
+		system ('@echo off');
+	}
+elsif ($^O eq "dos")
+	{
+		system ('@echo off');
+	}
+else 
+	{
+		system ("stty -echo");
+	}
 $seed = <>;
 $seed = HTML::Entities::encode($seed);
 chomp $seed;
-system ("stty echo"); # Return stty echo for easier yes/no
+
+# Return terminal echo
+if ($^O eq "MSWin32")
+	{
+		system ('@echo on');
+	}
+elsif ($^O eq "dos")
+	{
+		system ('@echo on');
+	}
+else 
+	{
+		system ("stty echo");
+	}
 print "\n";
 
 $long = sha512_hex($seed); # Declare that long uses sha512 on the seed
