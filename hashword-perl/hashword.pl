@@ -16,9 +16,21 @@ use HTML::Entities;
 # Declare 'my' variables as needed
 my $in;
 
-system ("clear");
+# Correctly clear screen based on OS.
+if ($^O eq "MSWin32")
+	{
+		system ("cls");
+	}
+elsif ($^O eq "dos")
+	{
+		system ("cls");
+	}
+else 
+	{
+		system ("clear");
+	}
 print "\n";
-print "Hashword generator v 1.2.1 (build 20131120) \n";  # Identifies version/build info (build info in yyyymmdd format)
+print "Hashword generator v 1.2.1 (build 20131126) \n";  # Identifies version/build info (build info in yyyymmdd format)
 print "\n";
 print "Please enter your hashword seed.\n";
 print "*NOTE: hashword seeds are case sensitive.* \n";
