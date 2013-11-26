@@ -5,23 +5,42 @@
 # 	Joshua "MrSchism" Embrey [mrschism@sdf.org]
 # 	Joseph "Arcarna" Preston [jpreston86@gmail.com]
 # Intial commit: October 16, 2013
-# Current version: October 29, 2013
+# Current version: November 26, 2013
 #####################################################################################
 
 ## Declare required components
 require 'digest'
+require 'rbconfig'
 
 ## Seed input
 system ("clear") # Starts fresh
 puts "\n" # Formatting away from initial line
-puts "Hashword generator v 1.2 (build 20131029)" # Name and build version info (version info in yyyymmdd format)
+puts "Hashword generator v 1.2 (build 20131126)" # Name and build version info (version info in yyyymmdd format)
 puts "\n" # Formatting
 puts "Please enter your hashword seed." # Informs user to input hashword seed
 puts "*NOTE: hashword seeds are case sensitive.*" # Case-sensitivity notice
 puts "\n" # Formatting
-system ("stty -echo") # Mitigates shoulder-surfing
+
+# Strip echoing of user input
+if RbConfig::CONFIG['host_os'] == "windows"
+	system ("@echo off")
+elsif RbConfig::CONFIG['host_os'] == "linux-gnu"
+	system ("stty -echo")
+else 
+	system ("stty -echo")
+end
+
+# Get user input
 seed = [(print 'Seed: '), gets.chomp][1] # Input prompt for starting seed using single-line array
-system ("stty echo") # Re-enables text echo
+
+# Return echoing of user input
+if RbConfig::CONFIG['host_os'] == "windows"
+	system ("@echo on")
+elsif RbConfig::CONFIG['host_os'] == "linux-gnu"
+	system ("stty echo")
+else 
+	system ("stty echo")
+end
 
 ## Long mode boolean input
 puts "\n" # Formatting
