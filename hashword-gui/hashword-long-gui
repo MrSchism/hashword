@@ -1,0 +1,74 @@
+#!/usr/bin/python
+
+######################################################################################
+# hashword-gui written by: 									
+# 	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
+#	Joseph "Arcarna" Preston [jpreston86@gmail.com]					
+# Intial commit: December 2, 2013 							
+# Current version: December 4, 2013							
+######################################################################################
+
+import wx
+import hashlib
+
+class NameDialog(wx.Dialog):
+    def __init__(self, parent, id=-1, title="hashword"):
+        wx.Dialog.__init__(self, parent, id, title, size=(-1, 200))
+
+        self.mainSizer = wx.BoxSizer(wx.VERTICAL)
+        self.buttonSizer = wx.BoxSizer(wx.HORIZONTAL)
+        self.label = wx.StaticText(self, label="Hashword generator v 1.2 (build 20131204)\nPlease enter your hashword seed.\n\n*NOTE: hashword seeds are case sensitive.*")
+        self.label2 = wx.StaticText(self, label="Hashword Seed:")
+        self.field = wx.TextCtrl(self, value="", size=(300, 20))
+        self.okbutton = wx.Button(self, label="Generate", id=wx.ID_OK)
+
+        self.mainSizer.Add(self.label, 0, wx.ALL, 8 )
+        self.mainSizer.Add(self.label2, 0, wx.ALL, 8 )
+        self.mainSizer.Add(self.field, 0, wx.ALL, 8 )
+
+        self.buttonSizer.Add(self.okbutton, 0, wx.ALL, 8 )
+
+        self.mainSizer.Add(self.buttonSizer, 0, wx.ALL, 0)
+
+        self.Bind(wx.EVT_BUTTON, self.onOK, id=wx.ID_OK)
+        self.Bind(wx.EVT_TEXT_ENTER, self.onOK)
+
+        self.SetSizer(self.mainSizer)
+        self.result = None
+
+    def onOK(self, event):
+        self.result = self.field.GetValue()
+        self.Destroy()
+
+    def onCancel(self, event):
+        self.result = None
+        self.Destroy()
+
+class Frame(wx.Frame):
+    def __init__(self, parent, title):
+        wx.Frame.__init__(self, parent, title=title, size=(320, 80))
+        self.panel = wx.Panel(self)
+        self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
+        self.btn = wx.Button(self.panel, -1, "Press here for hashword input")
+        self.Bind(wx.EVT_BUTTON, self.GetSeed, self.btn)
+        self.txt = wx.TextCtrl(self.panel, -1, size=(300, -1))
+        self.txt.SetValue('')
+		
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(self.btn)
+        sizer.Add(self.txt)
+
+        self.panel.SetSizer(sizer)
+        self.Show()
+
+    def GetSeed(self, e):
+        dlg = NameDialog(self)
+        dlg.ShowModal()
+        self.txt.SetValue("#" + hashlib.sha512(dlg.result).hexdigest())
+
+    def OnCloseWindow(self, e):
+        self.Destroy()
+
+app = wx.App()
+frame = Frame(None, 'Long Hashword Generator')
+app.MainLoop()
