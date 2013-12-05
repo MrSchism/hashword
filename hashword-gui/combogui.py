@@ -2,7 +2,7 @@
 
 ######################################################################################
 # hashword-gui written by: 									
-# 	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
+#	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 #	Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 # Intial commit: December 2, 2013 							
 # Current version: December 4, 2013							
