@@ -78,5 +78,5 @@ class Frame(wx.Frame):
 
 # Standard end-application info
 app = wx.App() # Define app as an application
-frame = Frame(None, 'Short Hashword Generator') # Define frame with name
+frame = Frame(None, 'Long Hashword Generator') # Define frame with name
 app.MainLoop() # Loop the app to keep it open
