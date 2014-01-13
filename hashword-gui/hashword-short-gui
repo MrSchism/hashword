@@ -12,6 +12,10 @@
 import wx # Import wx for GUI elements
 import hashlib # Import hashlib for sha2 functionality.
 
+# Declare global constant VER
+global VER
+VER = '20140112'
+
 # Create Seed Dialog box
 class SeedDialog(wx.Dialog):
     def __init__(self, parent, id=-1, title="hashword"):
@@ -19,7 +23,7 @@ class SeedDialog(wx.Dialog):
 
         self.mainSizer = wx.BoxSizer(wx.VERTICAL) # define mainSizer BoxSizer element
         self.buttonSizer = wx.BoxSizer(wx.HORIZONTAL) # Define buttonSizer BoxSizer element
-        self.label = wx.StaticText(self, label="Hashword generator v 1.2 (build 20131204)\nPlease enter your hashword seed.\n\n*NOTE: hashword seeds are case sensitive.*") # Define label StaticText element
+        self.label = wx.StaticText(self, label="Hashword generator v 1.2 (build" + VER + ")\nPlease enter your hashword seed.\n\n*NOTE: hashword seeds are case sensitive.*") # Define label StaticText element
         self.label2 = wx.StaticText(self, label="Hashword Seed:") # Define label2 StaticText element
         self.field = wx.TextCtrl(self, value="", size=(300, 20)) # Define field TextCtrl element
         self.okbutton = wx.Button(self, label="Generate", id=wx.ID_OK) # Define okbutton Button element
