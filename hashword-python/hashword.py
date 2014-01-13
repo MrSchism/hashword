@@ -5,18 +5,22 @@
 #   Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 #   Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 # Intial commit: November 6, 2013 							
-# Current version: November 6, 2013							
+# Current version: January 12, 2014						
 ######################################################################################
 
 # Declare imports
 import hashlib
 import os
 
+# Declare VER global constant
+global VER
+VER = '20140112'
+
 # Start fresh
 os.system('cls' if os.name=='nt' else 'clear')
 print ("")
 
-print ("Hashword generator v 1.2 (build 20131106) \n")
+print ("Hashword generator v 1.2.1 (build " + VER + ") \n")
 print ("Please enter your hashword seed.")
 print ("*NOTE: hashword seeds are case sensitive.* \n")
 
