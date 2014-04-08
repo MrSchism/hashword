@@ -33,5 +33,5 @@ os.system('@echo on' if os.name=='nt' else 'stty echo')
 mode = input("\nUse Long mode (yes/no): ").lower()
 
 # If mode is yes, print long, otherwise print short (ugly, but there).
-print (("\nYour hashword is:\n" + "#" + hashlib.sha512(seed.encode('utf-8')).hexdigest()) if mode=='yes' else ("\nYour hashword is:\n" + "#" + hashlib.sha256(seed.encode('utf-8')).hexdigest()))
+print ("\nYour hashword is:\n#" + (hashlib.sha512 if mode=='yes' else hashlib.sha256)(seed.encode('utf-8')).hexdigest())
 print ("")
