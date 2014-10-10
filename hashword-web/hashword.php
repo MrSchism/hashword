@@ -10,7 +10,7 @@
 -#	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 -#	Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 -# Intial commit: October 30, 2013 							
--# Current version: November 20, 2013							
+-# Current version: October 10, 2014							
 -######################################################################################
 -->
 
@@ -41,10 +41,10 @@ function scrub($seed) {
 
 switch ($hashtype) {
 		case "short":
-			echo "#" , openssl_digest($seed, 'sha256'); //Outputs seed in SHA256 hash.
+			echo "#" , openssl_digest($seed, 'md5'); //Outputs seed in MD5 hash.
 			break;
 		case "long":
-			echo "#" , openssl_digest($seed, 'sha512'); //Outputs seed in SHA512 hash.
+			echo "#" , openssl_digest($seed, 'sha256'); //Outputs seed in SHA256 hash.
 			break;
 		default:
 			echo 'Please select Short or Long'; //Outputs when no radio button is selected.
