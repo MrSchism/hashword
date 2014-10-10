@@ -5,11 +5,11 @@
 #         Joshua "MrSchism" Embrey [mrschism@sdf.org]                                        
 #         Joseph "Arcarna" Preston [jpreston86@gmail.com]                                        
 # Intial commit: October 9, 2013                                                         
-# Current version: November 20, 2013                                                        
+# Current version: October 10, 2014                                                        
 ######################################################################################
 
 # Declare used hashing digests
-use Digest::SHA qw(sha512_hex);
+use Digest::MD5 qw(md5_hex);
 use Digest::SHA qw(sha256_hex);
 use HTML::Entities;
 
@@ -26,8 +26,8 @@ print "-----\n";
 print "\n";
 
 print "Short:\n";
-print "\#", sha256_hex($seed), "\n"; # Display short hashword
+print "\#", md5_hex($seed), "\n"; # Display short hashword
 print "\n";
 print "Long:\n";
-print "\#", sha512_hex($seed), "\n"; # Display long hashword
+print "\#", sha256_hex($seed), "\n"; # Display long hashword
 print "\n";
