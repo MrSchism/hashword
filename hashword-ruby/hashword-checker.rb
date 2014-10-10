@@ -5,7 +5,7 @@
 # 	Joshua "MrSchism" Embrey [mrschism@sdf.org]
 # 	Joseph "Arcarna" Preston [jpreston86@gmail.com]
 # Intial commit: October 19, 2013
-# Current version: October 19, 2013
+# Current version: October 10, 2014
 #####################################################################################
 
 ## Declare required components
@@ -17,9 +17,9 @@ puts "Seed?" # Requests starting seed
 seed = gets.chomp # Input prompt for starting seed
 
 puts "-----------------------------------" # Formatting
-long = Digest::SHA512.hexdigest(seed) # Defines 'long'
+long = Digest::SHA256.hexdigest(seed) # Defines 'long'
 	puts "\n", "Long:", "\#" + long, "\n" # Prints defined long hashword
 
-short = Digest::SHA256.hexdigest(seed) # Defines 'short'
+short = Digest::MD5.hexdigest(seed) # Defines 'short'
 	puts "\n", "Short:", "\#" + short, "\n" # Prints defined short hashword
 puts "-----------------------------------" # Formatting
