@@ -5,11 +5,11 @@
 #	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 #	Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 # Intial commit: October 9, 2013 							
-# Current version: November 26, 2013							
+# Current version: October 10, 2014							
 ######################################################################################
 
 # Declare hashing digests
-use Digest::SHA qw(sha512_hex);
+use Digest::MD5 qw(smd5_hex);
 use Digest::SHA qw(sha256_hex);
 use HTML::Entities;
 
@@ -30,7 +30,7 @@ else
 		system ("clear");
 	}
 print "\n";
-print "Hashword generator v 1.2.1 (build 20131126) \n";  # Identifies version/build info (build info in yyyymmdd format)
+print "Hashword generator v 2.0 (build 20141010) \n";  # Identifies version/build info (build info in yyyymmdd format)
 print "\n";
 print "Please enter your hashword seed.\n";
 print "*NOTE: hashword seeds are case sensitive.* \n";
@@ -69,12 +69,12 @@ else
 	}
 print "\n";
 
-$long = sha512_hex($seed); # Declare that long uses sha512 on the seed
-$short = sha256_hex($seed); # Declare that short uses sha256 on the seed
+$long = sha256_hex($seed); # Declare that long uses sha256 on the seed
+$short = md5_hex($seed); # Declare that short uses md5 on the seed
 
-# Until loop requesting yes/no for use of long (sha512) mode
+# Until loop requesting yes/no for use of long (sha256) mode
 until (defined $in) {
-	print "Use Long mode? (yes/no): ";
+	print "Use Long mode? (yes/NO): ";
 	$_ = <>;
 	$in = 1 if /^Y/i;
 	$in = 0 if /^N/i;
