@@ -9,7 +9,7 @@
 ######################################################################################
 
 # Declare hashing digests
-use Digest::MD5 qw(smd5_hex);
+use Digest::MD5 qw(md5_hex);
 use Digest::SHA qw(sha256_hex);
 use HTML::Entities;
 
