@@ -14,7 +14,6 @@ require 'rbconfig'
 
 os = RbConfig::CONFIG['host_os']
 win = ['windows','mingw32', 'mingw64']
-## Seed input
 
 # Fix cross-platform clear function
 if win.include? os
