@@ -56,7 +56,6 @@ print "\n";
 $long = sha256_hex($seed); # Declare that long uses sha256 on the seed
 $short = md5_hex($seed); # Declare that short uses md5 on the seed
 
-# Until loop requesting yes/no for use of long (sha256) mode
 until (defined $in) {
     print "Use Long mode? (yes/NO): ";
     $_ = <>;
