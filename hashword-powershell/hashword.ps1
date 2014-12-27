@@ -34,3 +34,4 @@ $seed = $null
  
 $hash = $hash.tolower()
 write-host "`n Your hashword is:`n  #$hash `n"
+read-host "Press enter to end..."
