@@ -5,7 +5,7 @@
 # 	Joshua "MrSchism" Embrey [mrschism@sdf.org]
 # 	Joseph "Arcarna" Preston [jpreston86@gmail.com]
 # Intial commit: October 19, 2013
-# Current version: October 10, 2014
+# Current version: January 22, 2015
 #####################################################################################
 
 ## Declare required components
@@ -23,3 +23,7 @@ long = Digest::SHA256.hexdigest(seed) # Defines 'long'
 short = Digest::MD5.hexdigest(seed) # Defines 'short'
 	puts "\n", "Short:", "\#" + short, "\n" # Prints defined short hashword
 puts "-----------------------------------" # Formatting
+
+seed = ''
+short = ''
+long = ''

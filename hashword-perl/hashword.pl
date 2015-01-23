@@ -5,7 +5,7 @@
 #	Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 #	Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 # Intial commit: October 9, 2013 							
-# Current version: October 19, 2014							
+# Current version: January 22, 2015							
 ######################################################################################
 
 # Declare hashing digests
@@ -25,7 +25,7 @@ else {
 }
 
 print "\n";
-print "Hashword generator v 2.0.1 (build 20141019) \n";  # Identifies version/build info (build info in yyyymmdd format)
+print "Hashword generator v 2.0.3 (build 20150122) \n";  # Identifies version/build info (build info in yyyymmdd format)
 print "\n";
 print "Please enter your hashword seed.\n";
 print "*NOTE: hashword seeds are case sensitive.* \n";
@@ -73,3 +73,10 @@ else {
 print "Your hashword is:\n";
 print "\#", $hash, "\n";
 print "\n";
+
+$seed = '';
+$long = '';
+$short = '';
+$in = '';
+$hash = '';
+

@@ -5,7 +5,7 @@
 #         Joshua "MrSchism" Embrey [mrschism@sdf.org]                                        
 #         Joseph "Arcarna" Preston [jpreston86@gmail.com]                                        
 # Intial commit: October 9, 2013                                                         
-# Current version: October 10, 2014                                                        
+# Current version: January 22, 2015                                                        
 ######################################################################################
 
 # Declare used hashing digests
@@ -31,3 +31,5 @@ print "\n";
 print "Long:\n";
 print "\#", sha256_hex($seed), "\n"; # Display long hashword
 print "\n";
+
+$seed = '';

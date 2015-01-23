@@ -5,7 +5,7 @@
 # 	Joshua "MrSchism" Embrey [mrschism@sdf.org]                                        
 # 	Joseph "Arcarna" Preston [jpreston86@gmail.com]                                        
 # Intial commit: November 6, 2013                                                         
-# Current version: October 10, 2014                                                       
+# Current version: January 22, 2015                                                       
 ######################################################################################
 
 # Imports
@@ -21,3 +21,4 @@ print ("Short:")
 print ("#" + hashlib.md5(seed.encode('utf-8')).hexdigest() + "\n")
 print ("Long:")
 print ("#" + hashlib.sha256(seed.encode('utf-8')).hexdigest() + "\n")
+seed = ''

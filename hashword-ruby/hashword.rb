@@ -5,7 +5,7 @@
 # 	Joshua "MrSchism" Embrey [mrschism@sdf.org]
 # 	Joseph "Arcarna" Preston [jpreston86@gmail.com]
 # Intial commit: October 16, 2013
-# Current version: October 28, 2014
+# Current version: January 22, 2015
 #####################################################################################
 
 ## Declare required components
@@ -23,7 +23,7 @@ else
 end
 
 puts "\n" # Formatting away from initial line
-puts " Hashword generator v 2.0.2 (build 20141028)" # Name and build version info (version info in yyyymmdd format)
+puts " Hashword generator v 2.0.3 (build 20150122)" # Name and build version info (version info in yyyymmdd format)
 puts "\n" # Formatting
 puts " Please enter your hashword seed." # Informs user to input hashword seed
 puts " *NOTE: hashword seeds are case sensitive.*" # Case-sensitivity notice
@@ -57,3 +57,7 @@ else
     hash = Digest::MD5.hexdigest(seed)
 end
 puts "\n", " Your hashword is:", "  \#" + hash, "\n"
+
+seed = ''
+input = ''
+hash = ''

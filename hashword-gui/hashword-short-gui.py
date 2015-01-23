@@ -5,7 +5,7 @@
 #   Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 #   Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 # Intial commit: December 2, 2013 							
-# Current version: October 10, 2014							
+# Current version: January 22, 2015						
 ######################################################################################
 
 # Declare imports
@@ -14,7 +14,7 @@ import hashlib # Import hashlib for md5 functionality.
 
 # Declare global constant VER
 global VER
-VER = '20141010'
+VER = '20150122'
 
 # Create Seed Dialog box
 class SeedDialog(wx.Dialog):
@@ -23,7 +23,7 @@ class SeedDialog(wx.Dialog):
 
         self.mainSizer = wx.BoxSizer(wx.VERTICAL) # define mainSizer BoxSizer element
         self.buttonSizer = wx.BoxSizer(wx.HORIZONTAL) # Define buttonSizer BoxSizer element
-        self.label = wx.StaticText(self, label="Hashword generator v 2.0 (build" + VER + ")\nPlease enter your hashword seed.\n\n*NOTE: hashword seeds are case sensitive.*") # Define label StaticText element
+        self.label = wx.StaticText(self, label="Hashword generator v 2.0.3 (build" + VER + ")\nPlease enter your hashword seed.\n\n*NOTE: hashword seeds are case sensitive.*") # Define label StaticText element
         self.label2 = wx.StaticText(self, label="Hashword Seed:") # Define label2 StaticText element
         self.field = wx.TextCtrl(self, value="", size=(300, 20)) # Define field TextCtrl element
         self.okbutton = wx.Button(self, label="Generate", id=wx.ID_OK) # Define okbutton Button element
