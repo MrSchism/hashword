@@ -17,6 +17,16 @@ Intended improvements are as follows:
 
 Updates
 -------
+20150416-
+Beginning with the PowerShell hashword checker the v3-dev branch will be worked on; v2-archive exists solely to archive the previous version.
+
+The v3 branch will include:
+  1. Add complexity
+    * Legacy mode to provide backwards compatibility.
+  2. Improved GUI
+  3. Improved Web build (possibly in JavaScript to prevent page update)
+  4. Basic implementation for Android app
+
 The v2.0 (20141010) update includes the following changes:
   1. Changed algorithms
     * Short is now MD5
